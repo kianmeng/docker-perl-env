@@ -6,7 +6,7 @@ Docker environment for different Perl's modules
 $ make
 ```
 
-## to bootstrap example module, for example, modern-perl
+## To bootstrap example module, for example, modern-perl
 ```
 $ cd modern-perl
 $ make
