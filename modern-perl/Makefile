@@ -1,16 +1,16 @@
-SUBDIRS:= $(wildcard */.)
-DOCKERPS:= $(shell docker ps -a -q)
+MODULE:= modern-perl
+DOCKERPS:= $(shell docker images | grep $(MODULE) | tr -s ' ' | cut -d ' ' -f3)
 
-.PHONY: all clean $(SUBDIRS)
+.PHONY: build run clean
 
-all: $(SUBDIRS)
+build:
+	docker build -t $(USER):$(MODULE) .
+	docker images | grep $(MODULE)
 
-$(SUBDIRS):
-	docker pull perl:latest
-	$(MAKE) -C $@ clean all
+run:
+	docker run -it --rm -v $(PWD):/export $(USER):$(MODULE) bash
 
 clean:
 ifdef DOCKERPS
-	docker stop $(DOCKERPS)
-	docker rm $(DOCKERPS)
+	docker rmi $(DOCKERPS)
 endif

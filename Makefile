@@ -7,7 +7,7 @@ all: $(SUBDIRS)
 
 $(SUBDIRS):
 	docker pull perl:latest
-	$(MAKE) -C $@ clean all
+	$(MAKE) -C $@ clean build
 
 clean:
 ifdef DOCKERPS
