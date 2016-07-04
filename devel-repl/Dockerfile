@@ -10,6 +10,7 @@ RUN cpanm install Term::ReadLine::Gnu
 
 RUN cpanm install Devel::REPL
 RUN cpanm install Devel::REPL::Plugin::DataPrinter
+RUN cpanm install Devel::REPL::Plugin::History
 
 RUN mkdir /root/.re.pl
 COPY repl.rc /root/.re.pl/
