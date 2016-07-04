@@ -8,7 +8,7 @@ build:
 	docker images | grep $(MODULE)
 
 run:
-	docker run -it --rm -v $(PWD):/export $(USER):$(MODULE) bash
+	docker run -it -v $(PWD):/export $(USER):$(MODULE)
 
 clean:
 ifdef DOCKERPS
