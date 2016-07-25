@@ -8,6 +8,9 @@ RUN cpanm install PadWalker
 # See http://stackoverflow.com/a/28818133
 RUN cpanm install Term::ReadLine::Gnu
 
+RUN cpanm install File::Next
+RUN cpanm install B::Keywords
+
 RUN cpanm install Devel::REPL
 RUN cpanm install Devel::REPL::Plugin::DataPrinter
 RUN cpanm install Devel::REPL::Plugin::History
