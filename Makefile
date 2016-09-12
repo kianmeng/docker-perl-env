@@ -1,7 +1,7 @@
-SUBDIRS:= $(wildcard */.)
-DOCKERPS:= $(shell docker ps -a -q)
+SUBDIRS := $(wildcard */.)
+DOCKERPS := $(shell docker ps -a -q)
 
-.PHONY: all clean $(SUBDIRS)
+.PHONY: all clean create $(SUBDIRS)
 
 all: $(SUBDIRS)
 
@@ -14,3 +14,10 @@ ifdef DOCKERPS
 	docker stop $(DOCKERPS)
 	docker rm $(DOCKERPS)
 endif
+
+create:
+	$(eval MODULE := $(filter-out $@,$(MAKECMDGOALS)))
+	$(eval MODULE_NAME = $(shell echo $(MODULE) | tr '[:upper:]' '[:lower:]' | sed 's/::/-/g'))
+	cp -rv template $(MODULE_NAME)
+	sed -i 's/#MODULE#/$(MODULE)/g' $(MODULE_NAME)/Dockerfile
+	sed -i 's/#MODULE_NAME#/$(MODULE_NAME)/g' $(MODULE_NAME)/Makefile

@@ -18,3 +18,11 @@ $ make run
 $ cd modern-perl
 $ make clean
 ```
+
+## To bootstrap a new module not found in this repository.
+```
+$ make create Dist::Zilla
+$ cd dist-zilla
+$ make
+$ make run
+```
