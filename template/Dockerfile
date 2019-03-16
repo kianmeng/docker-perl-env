@@ -1,5 +1,5 @@
 FROM perl:latest
 
-RUN cpanm install #MODULE#
+RUN cpanm #MODULE#
 
 WORKDIR /export
