@@ -1,4 +1,4 @@
-##MODULE#
+# #MODULE#
 
 This is a playground for #MODULE#.
 - [Pod documentation](https://metacpan.org/pod/#MODULE#)
