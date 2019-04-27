@@ -1,4 +1,4 @@
-# docker-perl-env
+# Perl Module(s) of the Week
 Docker environment for different Perl's modules
 
 ## To bootstrap the environment
