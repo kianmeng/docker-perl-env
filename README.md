@@ -1,19 +1,19 @@
 # Perl Module(s) of the Week
 Docker environment and sample code usages for different [Perl module(s) of the week](https://www.kianmeng.org/search/label/plmotw).
 
-## To bootstrap the environment
+## To bootstrap the environment.
 ```
 $ make
 ```
 
-## To bootstrap example module, for example, modern-perl
+## To bootstrap example module, for example, modern-perl.
 ```
 $ cd Modern-Perl
 $ make
 $ make run
 ```
 
-## To clean up your environment
+## To clean up your environment.
 ```
 $ cd Modern-Perl
 $ make clean
