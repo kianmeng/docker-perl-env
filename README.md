@@ -1,5 +1,5 @@
 # Perl Module(s) of the Week
-Docker environment for different [Perl module(s) of the week](https://www.kianmeng.org/search/label/plmotw).
+Docker environment and sample code usages for different [Perl module(s) of the week](https://www.kianmeng.org/search/label/plmotw).
 
 ## To bootstrap the environment
 ```
