@@ -30,7 +30,10 @@ foreach my $test_case (@test_cases) {
     say q||;
 }
 
+1;
+
 __END__
+$ perl ex1.pl
 
 ============================================================
 Test Case: Loss of insignificant words
@@ -73,5 +76,3 @@ Test Case: Try Spacing
 String 1: LoanAccountDealing
 String 2: Load, Account, Dealing
 Jaro-Winkler Similarity: 0.901010101010101
-
-1;
