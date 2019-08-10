@@ -1,0 +1,23 @@
+$line =~ s/^
+            (?:
+                # double quoted string
+                (")                             # $quote
+                ((?>[^\\"]*(?:\\.[^\\"]*)*))"   # $quoted
+            |   # --OR--
+                # singe quoted string
+                (')                             # $quote
+                ((?>[^\\']*(?:\\.[^\\']*)*))'   # $quoted
+            |   # --OR--
+                # unquoted string
+                (                               # $unquoted
+                    (?:\\.|[^\\"'])*?
+                )
+                # followed by
+                (                               # $delim
+                    \Z(?!\n)                    # EOL
+                |   # --OR--
+                    (?-x:$delimiter)            # delimiter
+                |   # --OR--
+                    (?!^)(?=["'])               # a quote
+                )
+            )//xs or return;            # extended layout
